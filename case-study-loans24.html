@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Case study: redesigning premises verification for Loans24." />
+  <title>Loans24 Premises Verification | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="detail-page case-study-mode loans24-page">
+  <header class="detail-header">
+    <div class="container nav detail-nav">
+      <a class="breadcrumb" href="index.html">&lt; Back to Portfolio</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="detail-hero">
+      <div class="container detail-grid">
+        <article class="detail-panel reveal is-visible">
+          <p class="project-kicker">Fintech / Lending / Trust &amp; Safety</p>
+          <div class="loans24-title-row">
+            <div>
+              <h1>Proof of Address, Without the Back-and-Forth</h1>
+              <p class="detail-subtitle">Redesigning premises verification so genuine customers can complete evidence capture independently, with clear guidance at every step.</p>
+            </div>
+            <a class="loans24-download" href="assests/Loans24_Premises_Verification_Case.pptx" download>Download Presentation</a>
+          </div>
+
+          <div class="case-study-draft">
+            <div class="loans24-case-study">
+              <section class="loans24-opening">
+                <div>
+                  <p class="case-study-label">The challenge</p>
+                  <h2>Verification was treating instruction failures like trust failures.</h2>
+                </div>
+                <p>A legitimate loan applicant could fail premises verification not because they were hiding anything, but because the process was fragmented, ambiguous, and built around chasing people rather than guiding them. Incomplete evidence triggered re-submissions and manual follow-up days after the customer had left the flow.</p>
+              </section>
+
+              <section class="loans24-signal-grid">
+                <article><span>Role</span><p>End-to-end product ownership: problem definition, flow design, edge cases, MVP scope, and success metrics.</p></article>
+                <article><span>Product bet</span><p>Catch evidence issues while a customer is still capturing, not after they have submitted.</p></article>
+                <article><span>North star</span><p>Percentage of customers verified successfully without manual intervention.</p></article>
+              </section>
+
+              <section class="loans24-section">
+                <p class="case-study-label">Reframing</p>
+                <h2>Guide the customer toward usable evidence instead of asking for more of it.</h2>
+                <p>The obvious question was how to collect better evidence. That would have led to more photos, more angles, and more friction for honest customers. The better question was how to make “acceptable evidence” clear in the moment, then validate it before the customer has moved on.</p>
+                <div class="loans24-principle"><strong>Design principle</strong><span>Never fail silently, and never make a customer redo work that already succeeded.</span></div>
+              </section>
+
+              <section class="loans24-section">
+                <p class="case-study-label">Customer context</p>
+                <h2>Evidence needs to fit the customer’s real premises.</h2>
+                <div class="loans24-personas">
+                  <article><h3>Salaried</h3><p><strong>Premises:</strong> Home</p><p>Fast, low-effort confirmation through an entrance and a relevant interior view.</p></article>
+                  <article><h3>Work-from-home</h3><p><strong>Premises:</strong> Home and work area</p><p>Show relevance without asking customers to expose their entire home.</p></article>
+                  <article><h3>Self-employed</h3><p><strong>Premises:</strong> Shop or office</p><p>Focus on business entrance, signage, and operating setup.</p></article>
+                  <article><h3>Rented or shared home</h3><p><strong>Premises:</strong> Residence</p><p>Verify access to the declared address, not property ownership.</p></article>
+                </div>
+              </section>
+
+              <section class="loans24-section">
+                <p class="case-study-label">Flow design</p>
+                <h2>Resolve each problem without breaking the customer’s momentum.</h2>
+                <ol class="loans24-journey">
+                  <li><span>01</span><div><h3>Explain</h3><p>Set expectations before asking for camera or location access: why it is needed, what will be captured, and how long it takes.</p></div></li>
+                  <li><span>02</span><div><h3>Prepare</h3><p>Give one instruction at a time with an on-screen reference instead of a checklist customers must interpret alone.</p></div></li>
+                  <li><span>03</span><div><h3>Capture and check</h3><p>Detect blur, poor light, framing, and relevance during capture so a customer can fix the issue immediately.</p></div></li>
+                  <li><span>04</span><div><h3>Review and submit</h3><p>Show what is complete and what is missing before submission, then route normal cases to automated verification.</p></div></li>
+                </ol>
+                <figure class="loans24-flow-figure">
+                  <img src="assests/loans24-user-flow.png" alt="Loans24 guided premises verification user flow" loading="lazy" />
+                  <figcaption>Guided capture keeps permission, quality, recapture, and verification outcomes within one continuous customer journey.</figcaption>
+                </figure>
+              </section>
+
+              <section class="loans24-section">
+                <p class="case-study-label">Recovery design</p>
+                <h2>Plan for real-world interruptions, not a perfect demo.</h2>
+                <div class="loans24-recovery-grid">
+                  <article><h3>Permission denied</h3><p>Explain purpose, retry, then guide to device settings or an allowed alternative path.</p></article>
+                  <article><h3>Low-quality capture</h3><p>Identify the issue on the same step and give one specific correction, not a vague rejection.</p></article>
+                  <article><h3>Network interruption</h3><p>Save completed progress securely and resume the upload when the customer reconnects.</p></article>
+                  <article><h3>Session abandoned</h3><p>Resume from the last successful step rather than restarting the customer from zero.</p></article>
+                </div>
+              </section>
+
+              <section class="loans24-section loans24-mvp-section">
+                <p class="case-study-label">MVP boundary</p>
+                <h2>Validate the core loop before adding risk complexity.</h2>
+                <div class="loans24-mvp-grid">
+                  <div><h3>Included in V1</h3><ul><li>Persona-based evidence checklist</li><li>Live guidance for blur, lighting, framing, and relevance</li><li>Clear permission handling and save/resume</li><li>Final review plus automated normal-case decisioning</li></ul></div>
+                  <div><h3>Deliberately deferred</h3><ul><li>Deep on-device fraud detection</li><li>Support for every premises context from day one</li><li>Backend complexity not needed to prove first-try completion</li></ul></div>
+                </div>
+              </section>
+
+              <section class="loans24-section">
+                <p class="case-study-label">Success framework</p>
+                <h2>Measure automation without hiding customer harm.</h2>
+                <div class="loans24-metrics">
+                  <article><span>Customer</span><p>Completion rate, median time to complete, drop-off by step, and retry rate.</p></article>
+                  <article><span>Evidence</span><p>First-pass acceptance, quality failure, recapture, and mismatch rate.</p></article>
+                  <article><span>Operations and risk</span><p>Manual intervention, re-request rate, fraud signals, false decisions, privacy incidents, and device or network bias.</p></article>
+                </div>
+              </section>
+
+              <section class="loans24-section">
+                <p class="case-study-label">Rollout</p>
+                <h2>Learn in stages, then expand responsibly.</h2>
+                <div class="loans24-rollout"><article><span>Pilot</span><p>Start with salaried residential customers and instrument each step.</p></article><article><span>Expand</span><p>Add work-from-home and self-employed contexts across varied devices and networks.</p></article><article><span>Scale</span><p>Tune evidence rules using live results before broadening to remaining cases.</p></article></div>
+              </section>
+
+              <blockquote class="loans24-reflection">The important design discipline was not asking for more proof. It was finding the minimum verifiable evidence for each customer, then moving every recoverable failure into the moment where it could be fixed without creating manual work.</blockquote>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

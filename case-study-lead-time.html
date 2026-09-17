@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Case study: automating packaging reorder alerts." />
+  <title>Automating Packaging Reorder Alerts | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="detail-page case-study-mode lead-time-page">
+  <header class="detail-header">
+    <div class="container nav detail-nav">
+      <a class="breadcrumb" href="index.html">&lt; Back to Portfolio</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="detail-hero">
+      <div class="container detail-grid">
+        <article class="detail-panel reveal is-visible">
+          <p class="project-kicker">Operations / Automation / Decision Systems</p>
+          <h1>Automating Packaging Reorder Alerts</h1>
+          <p class="detail-subtitle">From a vague operational complaint to a transparent decision system that makes packaging risk visible, consistent, and actionable.</p>
+
+          <div class="case-study-draft">
+            <div class="operations-case-study">
+              <section class="case-study-brief">
+                <p class="project-kicker">At a glance</p>
+                <div class="case-study-brief-grid">
+                  <div>
+                    <h2>Turn a risky manual judgment into a repeatable rule.</h2>
+                    <p>Packaging stock, future production needs, pending purchase orders, and supplier delays lived in different places. Knowing whether a shortage was actually coming relied on one person correctly combining four moving numbers under pressure, every time.</p>
+                  </div>
+                  <dl class="case-study-meta">
+                    <div><dt>Role</dt><dd>Sole owner: problem discovery, decision-logic design, build, and rollout</dd></div>
+                    <div><dt>Scope</dt><dd>End-to-end project</dd></div>
+                    <div><dt>Key outcome</dt><dd>Replaced ad hoc, item-by-item review with a rule-based system covering every tracked packaging item each cycle.</dd></div>
+                  </dl>
+                </div>
+              </section>
+
+              <section class="case-study-section">
+                <p class="case-study-label">Discovery</p>
+                <h2>Find the actual failure beneath the symptom.</h2>
+                <p>The operations team did not arrive with a clean specification. They had a recurring pattern: packaging came dangerously close to running out, and by the time it was obvious there was not always enough runway left to act. Walking through the workflow revealed four individually-correct inputs that were never consistently combined: daily stock movement, production plans, pending purchase orders, and supplier lead times.</p>
+                <div class="case-study-insight">
+                  <span>Reframing the ask</span>
+                  <p>The initial ask was for a single dashboard. But a dashboard would improve visibility without removing the difficult judgment call. The product question became: how might we convert a high-pressure, manual calculation into a rule the system applies consistently?</p>
+                </div>
+              </section>
+
+              <section class="case-study-section">
+                <p class="case-study-label">Decision</p>
+                <h2>Choose the approach with the least friction.</h2>
+                <div class="case-study-options">
+                  <article class="case-study-option">
+                    <p class="case-study-option-status">Considered</p>
+                    <h3>Unified dashboard</h3>
+                    <p><strong>Value:</strong> Places all four data sources on one screen.</p>
+                    <p><strong>Trade-off:</strong> Still leaves the manual urgency judgment with the team.</p>
+                  </article>
+                  <article class="case-study-option">
+                    <p class="case-study-option-status">Considered</p>
+                    <h3>Standalone inventory app</h3>
+                    <p><strong>Value:</strong> Provides full control over the data model and interface.</p>
+                    <p><strong>Trade-off:</strong> Creates switching cost for a team already fluent in Sheets.</p>
+                  </article>
+                  <article class="case-study-option is-chosen">
+                    <p class="case-study-option-status">Chosen direction</p>
+                    <h3>Rule-based decision layer</h3>
+                    <p><strong>Value:</strong> Automates the judgment while preserving the team's existing workflow.</p>
+                    <p><strong>Trade-off:</strong> Less visual novelty, but near-zero adoption friction.</p>
+                  </article>
+                </div>
+              </section>
+
+              <section class="case-study-section">
+                <p class="case-study-label">Framework</p>
+                <h2>Turn one fuzzy question into four clear checks.</h2>
+                <div class="case-study-framework">
+                  <article class="case-study-step"><span>01</span><h3>Calculate effective stock</h3><p>Evaluate physical stock and incoming purchase orders together, not in isolation.</p></article>
+                  <article class="case-study-step"><span>02</span><h3>Protect the minimum floor</h3><p>Apply the business's agreed minimum-stock threshold to every item, every cycle.</p></article>
+                  <article class="case-study-step"><span>03</span><h3>Account for lead-time demand</h3><p>Check whether stock can cover expected consumption while a new supplier order arrives.</p></article>
+                  <article class="case-study-step"><span>04</span><h3>Separate trigger from quantity</h3><p>Return both a clear status and a suggested order quantity, rather than one blended judgment.</p></article>
+                </div>
+              </section>
+
+              <section class="case-study-section">
+                <p class="case-study-label">Validation</p>
+                <h2>Test the logic against the mistakes it must prevent.</h2>
+                <div class="case-study-table-wrap">
+                  <table class="case-study-table">
+                    <thead><tr><th>Scenario</th><th>Current stock</th><th>Incoming</th><th>Minimum floor</th><th>Naive read</th><th>System output</th></tr></thead>
+                    <tbody>
+                      <tr><th scope="row">Looks urgent, isn't</th><td>12,500</td><td>20,000</td><td>20,000</td><td>Reorder now</td><td><strong>Safe - effective stock is 32,500</strong></td></tr>
+                      <tr><th scope="row">Actually urgent</th><td>10,000</td><td>0</td><td>20,000</td><td>Ambiguous</td><td><strong>Critical</strong></td></tr>
+                      <tr><th scope="row">At the boundary</th><td>19,500</td><td>0</td><td>20,000</td><td>Unclear</td><td><strong>Reorder now</strong></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              <section class="case-study-section">
+                <p class="case-study-label">Operating model</p>
+                <h2>Keep the source transparent. Automate the judgment.</h2>
+                <ol class="case-study-flow">
+                  <li><span>01</span><p>Google Sheets remains the transparent source of truth for stock, production demand, pending orders, lead times, thresholds, and calculations.</p></li>
+                  <li><span>02</span><p>Google Apps Script evaluates each packaging item against the decision framework automatically.</p></li>
+                  <li><span>03</span><p>Categorized alerts communicate both the status and the numbers behind it: Critical, Reorder Now, or Safe.</p></li>
+                  <li><span>04</span><p>The team can audit the logic without needing to inspect a hidden technical system.</p></li>
+                </ol>
+              </section>
+
+              <section class="case-study-section case-study-impact-section">
+                <p class="case-study-label">Impact</p>
+                <h2>Make routine checks quieter and exceptions clearer.</h2>
+                <div class="case-study-impact-grid">
+                  <article><span>+</span><p>100% of tracked packaging items are evaluated every cycle instead of relying on occasional spot checks.</p></article>
+                  <article><span>+</span><p>Detection moves from the next time someone reviews a sheet to same-cycle automatic alerting.</p></article>
+                  <article><span>+</span><p>The system structurally prevents unnecessary reorders when stock is already incoming.</p></article>
+                  <article><span>+</span><p>Routine review time is substantially reduced, while human attention is reserved for real exceptions.</p></article>
+                </div>
+              </section>
+
+              <section class="case-study-section">
+                <p class="case-study-label">Next</p>
+                <h2>Extend only after the foundation is trusted.</h2>
+                <div class="case-study-next-grid">
+                  <article><span>01</span><p>Track supplier reliability so lead-time protection reflects actual delivery performance.</p></article>
+                  <article><span>02</span><p>Replace static planning inputs with demand forecasts based on consumption trends.</p></article>
+                  <article><span>03</span><p>Introduce an exception-only view after validating the alert categories with the operations team.</p></article>
+                </div>
+              </section>
+
+              <blockquote class="case-study-takeaway">The team asked for a better way to see a hard decision. The more valuable product move was to remove the need to make that decision manually in the first place.</blockquote>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domino's Case Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== DESIGN TOKENS (SHARED WITH MAIN SITE) ===== */
+:root {
+  --bg: #f2f0ea;
+  --panel: #ffffff;
+  --line: rgba(24, 28, 34, 0.12);
+  --text: #181c22;
+  --muted: #5c6470;
+  --accent: #263551;
+  --accent-2: #7c6a4f;
+  --accent-soft: rgba(38, 53, 81, 0.07);
+  --shadow: 0 18px 44px rgba(24, 28, 34, 0.09);
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+/* ===== BASE ===== */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Manrope", system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* ===== CONTAINER ===== */
+.wrapper {
+  max-width: 900px;
+  margin: 48px auto 96px;
+  padding: 0 20px;
+}
+
+.breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-weight: 700;
+  text-decoration: none;
+  margin-bottom: 28px;
+}
+
+.breadcrumb:hover { color: var(--accent); }
+
+.card {
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: clamp(28px, 5vw, 48px);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.header-copy p.kicker {
+  margin: 0 0 10px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--accent-2);
+}
+
+h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.2rem, 4.4vw, 3.1rem);
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  max-width: 18ch;
+}
+
+.logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  flex: 0 0 auto;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 22px;
+  background: var(--accent);
+  color: #f5f3ee;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  margin-top: 44px;
+  padding-top: 44px;
+  border-top: 1px solid var(--line);
+}
+
+.section:first-of-type {
+  margin-top: 40px;
+  padding-top: 0;
+  border-top: none;
+}
+
+.section h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  margin: 0 0 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* BODY TEXT */
+.section p {
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: var(--muted);
+  margin: 0 0 4px;
+  max-width: 68ch;
+}
+
+/* BULLETS */
+ul {
+  margin: 14px 0 0;
+  padding-left: 20px;
+  max-width: 68ch;
+}
+
+li {
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.section p strong {
+  color: var(--text);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.08rem;
+}
+
+/* IMAGE CAPTION LABEL */
+.figure-label {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--accent-2);
+  margin: 0 0 10px;
+}
+
+/* IMAGES */
+figure {
+  margin: 0;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+}
+
+img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.metrics-figures {
+  display: grid;
+  gap: 16px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+  <a href="index.html" class="breadcrumb">&lt; Back to Portfolio</a>
+
+  <div class="card">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-copy">
+    <p class="kicker">Feature Improvement / Post-order Support</p>
+    <h1>Domino's — Enhanced Customer Support</h1>
+  </div>
+  <img src="assests/logo.png" class="logo" alt="Domino's logo">
+</div>
+
+<a href="assests/PRD_Dominos.pdf" download class="btn">Download PRD</a>
+
+<!-- SECTION 1 -->
+<div class="section">
+  <h2>1. Context & Problem</h2>
+  <p>
+    While ordering from Domino's, I experienced a situation where the delivered order was incorrect. When I tried to resolve it through the app, the process felt slow, unclear, and heavily dependent on chatbot interactions. The system offered compensation (like vouchers) instead of actually solving the problem. This highlighted a broader product issue: in a high-frequency product like Domino's, even small failures in order accuracy can significantly impact user trust if the resolution experience is not seamless.
+  </p>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section">
+  <h2>2. Understanding the Problem</h2>
+  <p>
+    The current support experience requires users to navigate through predefined chatbot flows, often without clarity on what will happen next. Users have limited control over how the issue is resolved, and the process feels reactive rather than guided. From a user's perspective, the frustration is not just about receiving the wrong item, it's about the effort required to fix it. Many users may choose not to report issues at all, leading to silent dissatisfaction and reduced trust in the platform.
+  </p>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section">
+  <h2>3. Root Cause & Key Insight</h2>
+  <p>
+    After breaking down the experience, the problem was not just incorrect orders, but the way the system handles them.
+  </p>
+
+  <ul>
+    <li>The complaint flow is unstructured and not user-driven</li>
+    <li>There is no item-level issue reporting</li>
+    <li>Resolution options are not clearly presented</li>
+    <li>There is limited visibility into the status of the issue</li>
+  </ul>
+
+  <p style="margin-top:18px;"><strong>Key Insight</strong><br>
+    The real problem is not issue resolution itself, but the absence of a structured,
+    transparent, and user-controlled resolution process.
+  </p>
+</div>
+
+<!-- IMAGE -->
+<div class="section">
+  <p class="figure-label">Existing Experience: Unstructured Issue Resolution Flow</p>
+  <figure><img src="assests/Original_flow.png" alt="Existing unstructured issue resolution flow"></figure>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section">
+  <h2>4. Solution</h2>
+  <p>
+    The solution introduces a guided, step-by-step issue resolution flow integrated within the order details screen.
+    Instead of relying on open-ended chat interactions, the system helps users:
+  </p>
+  <ul>
+    <li>Clearly identify the issue (wrong item, missing item, delay)</li>
+    <li>Select the specific item affected</li>
+    <li>Upload an image for quick verification</li>
+    <li>Choose how they want the issue resolved (refund or replacement)</li>
+    <li>Track the progress of their request in real-time</li>
+  </ul>
+  <p style="margin-top:14px;">
+    This transforms the experience from reactive support to a structured decision flow.
+  </p>
+</div>
+
+<!-- SECTION 5 -->
+<div class="section">
+  <h2>5. Final Solution</h2>
+  <p>
+    The solution introduces a guided, step-by-step issue resolution flow integrated within the order details screen.
+  </p>
+  <ul>
+    <li>Clearly identify the issue (wrong item, missing item, delay)</li>
+    <li>Select the specific item affected</li>
+    <li>Upload an image for quick verification</li>
+    <li>Choose how they want the issue resolved (refund or replacement)</li>
+    <li>Track the progress of their request in real-time</li>
+  </ul>
+</div>
+
+<div class="section" style="margin-top:24px; padding-top:0; border-top:none;">
+  <p class="figure-label">Proposed Solution: Structured Issue Resolution Flow</p>
+  <figure><img src="assests/User_flow.png" alt="Proposed structured issue resolution flow"></figure>
+</div>
+
+<!-- SECTION 6 -->
+<div class="section">
+  <h2>6. Impact & Metrics</h2>
+  <p>
+    To evaluate the effectiveness of the improved issue resolution system, the following metrics focus on speed, user experience, and trust recovery.
+  </p>
+  <div class="metrics-figures" style="margin-top:16px;">
+    <figure><img src="assests/Metrics_table_1.png" alt="Impact metrics table 1"></figure>
+    <figure><img src="assests/Metrics_table_2.png" alt="Impact metrics table 2"></figure>
+  </div>
+</div>
+
+<div class="section">
+  <h2>7. Summary</h2>
+  <p>
+    By shifting from a chatbot-driven approach to a structured resolution flow, the system becomes more predictable, transparent, and user-friendly. This not only reduces friction for users but also creates a scalable framework for handling post-order issues, ultimately strengthening trust and long-term engagement.
+  </p>
+</div>
+
+  </div>
+</div>
+
+</body>
+</html>
